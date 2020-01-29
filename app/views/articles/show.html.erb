@@ -3,7 +3,7 @@
 
 <%= render partial: "comments/form" %>
 
-<h3>Comments</h3>
+<h3>Comments <%= @article.comments.count %></h3>
 <%= render partial: "comment", collection: @article.comments.reverse %>
 
 <%= link_to "<< Back to Articles List", articles_path %>
