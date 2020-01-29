@@ -11,6 +11,7 @@ RSpec.describe "User creates new article" do
         fill_in "article[body]", with: "New test body"
         click_on "Create Article"
 
+        expect(page).to have_content("Article New test title was created.")
         expect(page).to have_content("New test title")
         expect(page).to have_content("New test body")
       end
