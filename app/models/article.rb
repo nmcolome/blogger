@@ -4,4 +4,8 @@ class Article < ApplicationRecord
   has_many :tags, through: :taggings
 
   validates_presence_of :title, :body
+
+  def tag_list
+    tags.pluck(:name).join(", ")
+  end
 end
