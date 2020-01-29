@@ -10,6 +10,7 @@ RSpec.describe "User sees an article" do
 
       expect(page).to have_content(article.title)
       expect(page).to have_content(article.body)
+      expect(page).to have_link("<< Back to Articles List")
     end
   end
 end
