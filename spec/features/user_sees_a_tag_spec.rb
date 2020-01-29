@@ -14,6 +14,7 @@ RSpec.describe "A user sees a single tag" do
         expect(current_path).to eq(tag_path(tag))
         expect(page).to have_content(tag.name)
         expect(page).to have_link(article.title)
+        expect(page).to have_link("<< Back to Tag List")
       end
     end
   end
