@@ -14,6 +14,9 @@ RSpec.describe "User creates new article" do
 
         expect(page).to have_content("Article New test title was created.")
         expect(page).to have_content("New test title")
+        expect(page).to have_content("Tags")
+        expect(page).to have_content("ruby")
+        expect(page).to have_content("technology")
         expect(page).to have_content("New test body")
       end
     end
