@@ -15,6 +15,7 @@ RSpec.describe "User edits an article" do
         click_on "Update Article"
 
         expect(current_path).to eq(article_path(article))
+        expect(page).to have_content("Article #{article.title} was updated.")
         expect(page).to have_content("Title")
         expect(page).to have_content("New & improved body")
       end

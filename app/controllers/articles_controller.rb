@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :destroy, :edit]
+  before_action :set_article, only: [:show, :destroy, :edit, :update]
 
   def index
     @articles = Article.all
@@ -29,7 +29,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.update(article_params)
+    @article.update(article_params)
+    flash.notice = "Article #{@article.title} was updated."
 
     redirect_to article_path(@article)
   end
