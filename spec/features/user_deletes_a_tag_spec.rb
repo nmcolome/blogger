@@ -12,7 +12,8 @@ RSpec.describe "User deletes a tag" do
 
       expect(current_path).to eq(tags_path)
       expect(page).to have_link(tag2.name)
-      expect(page).to_not have_content(tag1.name)
+      expect(page).to_not have_link(tag1.name)
+      expect(page).to have_content("Tag #{tag1.name} was deleted.")
     end
   end
 end
